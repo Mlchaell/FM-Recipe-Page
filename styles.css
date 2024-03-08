@@ -1,0 +1,274 @@
+@import url('https://fonts.googleapis.com/css2?family=Young+Serif&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Young+Serif&display=swap');
+
+:root {
+  --dark-purple-hsl: 332, 51%, 32%;
+  --dark-purple: hsl(var(--dark-purple-hsl), 100%);
+
+  --white: hsl(0, 0%, 100%);
+  --white-2: hsl(330, 100%, 98%);
+  --white-3: hsl(30, 54%, 90%);
+
+  --light-brown: hsl(14, 45%, 36%);
+  --light-gray: hsl(30, 18%, 87%);
+  --gray: hsl(30, 10%, 34%);
+  --dark-gray: hsl(24, 5%, 18%);
+
+  --ff-main: "Outfit", sans-serif;
+  --ff-secondary: "Young Serif", serif;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  font-size: 62.5%;
+  /* 1rem = 10px */
+  /* height: 100%; */
+}
+
+body {
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+h1,
+h2,
+h3 {
+  line-height: 1;
+}
+
+/*************************/
+/* General Styling */
+/*************************/
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-color: hsl(34, 57%, 70%);
+}
+
+@media screen and (max-width: 386px) {
+  body {
+    background-color: #fff;
+  }
+}
+
+.recipe__container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 2rem;
+
+  background-color: #fff;
+  border-radius: 1rem;
+
+  max-width: 56rem;
+  padding: 3rem;
+
+  margin: 0 2rem;
+  margin-top: 2rem;
+  margin-bottom: 5rem;
+}
+
+@media screen and (max-width: 386px) {
+  .recipe__container {
+    border-radius: 0;
+    padding: 0;
+    min-width: 100%;
+    margin: 0;
+
+    margin-bottom: 2rem;
+  }
+}
+
+@media screen and (max-width: 866px) {
+  .recipe__container {
+    min-height: 100%;
+  }
+}
+
+.recipe__img {
+  border-radius: 1rem;
+  overflow: hidden;
+
+  margin: 0 auto;
+}
+
+@media screen and (max-width: 386px) {
+  .recipe__img {
+    border-radius: 0;
+  }
+}
+
+.recipe__header {
+  margin-top: 2rem;
+}
+
+.recipe__header h1 {
+  font-family: var(--ff-secondary);
+  font-size: 3rem;
+
+  margin-bottom: 1.5rem;
+}
+
+.recipe__prep-time {
+  background-color: hsl(var(--dark-purple-hsl), 15%);
+  padding: 2rem;
+  border-radius: 1rem;
+}
+
+@media screen and (max-width: 386px) {
+    .recipe__prep-time {
+      margin: 0 2rem;
+    }
+}
+
+@media screen and (max-width: 866px) {
+  .recipe__prep-time {
+    display: flex;
+    min-height: 15rem;
+    flex-direction: column;
+    justify-content: center;
+  }
+}
+
+.recipe__prep-time h2 {
+  font-family: var(--ff-main);
+  font-size: 1.8rem;
+  font-weight: 600;
+  letter-spacing: .8px;
+  color: var(--dark-purple);
+
+  margin-bottom: 1rem;
+}
+
+@media screen and (max-width: 865px) {
+  .recipe__header, .recipe__prep-time, .recipe__ingredients, .recipe__instructions, .recipe__nutrion, .line {
+    padding: 0 2rem;
+  }
+}
+
+/*************************/
+/* Helper Classes */
+/*************************/
+
+.header {
+  font-family: var(--ff-secondary);
+  font-size: 2.2rem;
+  font-weight: 400;
+  letter-spacing: 1px;
+  color: var(--light-brown);
+
+  margin-bottom: 1.5rem;
+}
+
+.body {
+  font-family: var(--ff-main);
+  font-size: 1.2rem;
+  line-height: 1.5rem;
+  max-width: 60ch;
+  color: var(--gray)
+}
+
+.bold {
+  font-weight: 800;
+  color: var(--gray);
+}
+
+.line {
+  margin: 2rem 0;
+  background-color: var(--light-gray);
+  height: 1px;
+  min-width: 75%;
+}
+
+li {
+  font-family: var(--ff-main);
+  font-size: 1.4rem;
+  color: var(--gray);
+
+  margin-left: 1.5rem;
+  margin-top: .8rem;
+  max-width: 60ch;
+}
+
+li > span {
+  position: relative;
+  left: 2rem;
+}
+
+@media screen and (max-width: 915px) {
+  li > span {
+    left: .5rem;
+  }
+}
+
+li::marker {
+  font-weight: 800;
+  color: var(--dark-purple);
+}
+
+table {
+  font-family: var(--ff-main);
+  font-size: 1.4rem;
+  text-align: start;
+  column-gap: 5rem;
+  border-collapse: collapse;
+  border-spacing: 5rem;
+  width: 90%;
+
+  margin-top: 1rem;
+  color: var(--gray);
+}
+
+tr:not(:last-child) {
+  width: 50%;
+  border-bottom: 1px solid var(--light-gray);
+}
+
+th {
+  font-weight: 400;
+  text-align: left;
+  padding-left: 3rem;
+}
+
+td {
+  font-weight: 800;
+  color: var(--dark-purple);
+  padding: 1rem 0;
+}
